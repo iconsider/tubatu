@@ -10,7 +10,9 @@ from tubatu.items import TubatuItem
 
 class TubatuSpider(scrapy.spiders.Spider):
     #处理404的情况
-    # handle_httpstatus_list = [404]
+    handle_httpstatus_list = [404]
+    # 设置下载延时
+    download_delay = 1
     name = "tubatu"
     allowed_domains = ["to8to.com"]
     start_urls = [
@@ -35,8 +37,6 @@ class TubatuSpider(scrapy.spiders.Spider):
         item["page_num"] = page_num
         yield item
 
-        #防止过快被禁
-        time.sleep(3)
         nextPageUrl = "http://gz.to8to.com/zs/8708815/case/%s.html" % "%06d" % (int(page_num) + 1)
         yield Request(url=nextPageUrl, callback=self.parse)
 

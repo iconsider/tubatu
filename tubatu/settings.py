@@ -46,15 +46,16 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'tubatu.middlewares.TubatuSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'tubatu.middlewares.TubatuSpiderMiddleware': 542,
+}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'tubatu.middlewares.TubatuDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   'tubatu.middlewares.TubatuDownloaderMiddleware': 543,
+   'tubatu.middlewares.RotateUserAgentMiddleware': 544
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -64,6 +65,7 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+# 用于封装item
 ITEM_PIPELINES = {
    'tubatu.pipelines.UrlPipeline': 300,
    'tubatu.pipelines.ImgPipeline': 301
