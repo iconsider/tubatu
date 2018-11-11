@@ -14,7 +14,7 @@ class TubatuSpider(scrapy.spiders.Spider):
     name = "tubatu"
     allowed_domains = ["to8to.com"]
     start_urls = [
-        "http://gz.to8to.com/zs/8708815/case/000000.html"
+        "http://gz.to8to.com/zs/8708815/case/400000.html"
         # "http://gz.to8to.com/zs/8708815/case/484240.html"
     ]
 

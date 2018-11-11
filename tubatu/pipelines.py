@@ -35,7 +35,6 @@ class ImgPipeline(ImagesPipeline):
     def get_media_requests(self, item, info):
         self.item = self
         for image_url in item['image_urls']:
-            self.default_headers['referer'] = image_url
             yield Request(image_url, meta={'item' : item, 'referer' : image_url})
 
     # 这个方法是在图片将要被存储的时候调用，来获取这个图片存储的路径
