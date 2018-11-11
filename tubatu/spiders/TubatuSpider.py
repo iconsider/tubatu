@@ -10,11 +10,11 @@ from tubatu.items import TubatuItem
 
 class TubatuSpider(scrapy.spiders.Spider):
     #处理404的情况
-    handle_httpstatus_list = [404]
+    # handle_httpstatus_list = [404]
     name = "tubatu"
     allowed_domains = ["to8to.com"]
     start_urls = [
-        "http://gz.to8to.com/zs/8708815/case/400000.html"
+        "http://gz.to8to.com/zs/8708815/case/000000.html"
         # "http://gz.to8to.com/zs/8708815/case/484240.html"
     ]
 
